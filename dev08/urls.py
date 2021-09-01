@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from projects.views import project,user,get_id
+from projects import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('project/',project),
+    # path('admin/', admin.site.urls),
+    # path('project/',project),
     # path('project/11/',get_id), # get_id不需要传参数
-    path('project/<int:id>/',get_id),
-    re_path(r'^users/(?P<username>\w{6,12})/$',user)
+    # path('project/<int:id>/', get_id),
+    path('project/<int:id>/',views.ProjectView.as_view() ),
+    # re_path(r'^users/(?P<username>\w{6,12})/$',user)
 ]
