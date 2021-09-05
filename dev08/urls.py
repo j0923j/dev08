@@ -26,3 +26,4 @@ urlpatterns = [
     path('project/<int:id>/',views.ProjectView.as_view() ),
     # re_path(r'^users/(?P<username>\w{6,12})/$',user)
 ]
+

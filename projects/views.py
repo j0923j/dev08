@@ -29,7 +29,7 @@ class ProjectView(View):
         # return render(request,'index.html', locals()) #locals指当前函数作用域
         # return render(request,'index.html', context={'datas': datas}) # 或者使用这个方法指定
         # 只返回数据
-        return JsonResponse(datas, safe=False, status=200)
+        return JsonResponse(datas, safe=False, status=200 ,json_dumps_params={"ensure_ascii":False})
     def post(self,request, id):
         return HttpResponse('POST')
     def put(self,request, id):
